@@ -77,3 +77,4 @@ elif Diao_Yong_Han_Shu == "autoshutdown()" or Diao_Yong_Han_Shu == "asd()" or Di
     autoshutdown()
 else:
     input("无效的输入")
+# 在这里提一句，其实我还悄咪咪地修了一个BUG，一个很智障的BUG
