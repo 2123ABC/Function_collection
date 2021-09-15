@@ -54,13 +54,14 @@ def autoshutdown():
         raise TypeError
     # ***************************
     # 设定自动关机
-    time = float(input("多少分钟后自动关闭？"))
+    time = float(input("多少时/分/秒后自动关闭？"))
     os.system(f"shutdown -s -t {int(real_time)}")
     input(f"设置完毕，你的电脑将在{int(real_time) // 60}分钟后关闭，按回车退出")
 
 # 欢迎界面
 split_line()
 print("欢迎使用函数集")
+print("版本号：0.000114514")
 print("这个作品只是2123ABC(Unknown2123)临时想出来的东西")
 print("因此请不要在意那些细节(*/ω＼*)")
 split_line()
