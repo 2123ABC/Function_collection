@@ -43,6 +43,7 @@ def autoshutdown():
     # ***************************
     # 判断单位
     unit = input("输入单位(时 分 秒)")
+    time = float(input("多少时/分/秒后自动关闭？"))
     if unit == "时":
         real_time = time * 3600
     elif unit == "分":
@@ -54,7 +55,6 @@ def autoshutdown():
         raise TypeError
     # ***************************
     # 设定自动关机
-    time = float(input("多少时/分/秒后自动关闭？"))
     os.system(f"shutdown -s -t {int(real_time)}")
     input(f"设置完毕，你的电脑将在{int(real_time) // 60}分钟后关闭，按回车退出")
 
