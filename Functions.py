@@ -57,6 +57,13 @@ def autoshutdown():
     # 设定自动关机
     os.system(f"shutdown -s -t {int(real_time)}")
     input(f"设置完毕，你的电脑将在{int(real_time) // 60}分钟后关闭，按回车退出")
+# 小彩蛋
+def about_this():
+    print("本程序为'函数集'，英文名：'Function collection'")
+    print("由2123ABC(又名Unknown2123)开发")
+    print("还有一件事")
+    print("我真的只是一个垃圾啊o((>ω< ))o")
+
 
 # 欢迎界面
 split_line()
@@ -73,7 +80,18 @@ Diao_Yong_Han_Shu = input("输入调用的函数")
 # 判断调用的函数
 if Diao_Yong_Han_Shu == "backup()" or Diao_Yong_Han_Shu == "bk()" or Diao_Yong_Han_Shu == "num1" or Diao_Yong_Han_Shu == "1":
     backup()
+    pass
 elif Diao_Yong_Han_Shu == "autoshutdown()" or Diao_Yong_Han_Shu == "asd()" or Diao_Yong_Han_Shu == "num2" or Diao_Yong_Han_Shu == "2":
     autoshutdown()
+    pass
+elif "/" in Diao_Yong_Han_Shu:
+    print("这里不是我的世界啊(っ °Д °;)っ")
+    input()
+    pass
+elif "()"  not in Diao_Yong_Han_Shu:
+    print("你是不是忘记加括号了(⊙_⊙)？")
+    input()
 else:
-    input("无效的输入")
+    print("无效的输入")
+    input()
+    pass
