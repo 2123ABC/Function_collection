@@ -3,6 +3,9 @@
 
 # 导入模块
 import os
+import urllib.request
+import urllib.parse
+import json
 
 
 # 定义函数
@@ -57,12 +60,35 @@ def autoshutdown():
     # 设定自动关机
     os.system(f"shutdown -s -t {int(real_time)}")
     input(f"设置完毕，你的电脑将在{int(real_time) // 60}分钟后关闭，按回车退出")
+
+
+# 翻译
+def translation():
+    will_translation = input("输入要翻译的字符：")
+    url = "https://fanyi.youdao.com/translate?smartresult=dict&smartresult=rule"
+    data = {}
+    data["i"] = will_translation
+    data["from"] = "AUTO"
+    data["to"] = "AUTO"
+    data["smartresult"] = "dict"
+    data["client"] = "fanyideskweb"
+    data["doctype"] = "json"
+    data["keyfrom"] = "fanyi.web"
+    data["action"] = "FY_BY_REALTlME"
+    data = urllib.parse.urlencode(data).encode("utf-8")
+    jieshou = urllib.request.urlopen(url, data)
+    get = jieshou.read().decode("utf-8")
+    get = json.loads(get)
+    print(get["translateResult"][0][0]["tgt"])
+
+
 # 小彩蛋
 def about_this():
     print("本程序为'函数集'，英文名：'Function collection'")
     print("由2123ABC(又名Unknown2123)开发")
     print("还有一件事")
     print("我真的只是一个垃圾啊o((>ω< ))o")
+    input()
 
 
 # 欢迎界面
@@ -75,23 +101,27 @@ split_line()
 print("选择函数:")
 print("1.backup() / bk() 备份文件")
 print("2.autoshutdown() / asd() 定时关机")
+print("3.translation() / tr() 翻译（有道翻译的API）")
 split_line()
 Diao_Yong_Han_Shu = input("输入调用的函数")
 # 判断调用的函数
-if Diao_Yong_Han_Shu == "backup()" or Diao_Yong_Han_Shu == "bk()" or Diao_Yong_Han_Shu == "num1" or Diao_Yong_Han_Shu == "1":
+if Diao_Yong_Han_Shu == "backup()" or Diao_Yong_Han_Shu == "bk()" or Diao_Yong_Han_Shu == "1":
     backup()
     pass
-elif Diao_Yong_Han_Shu == "autoshutdown()" or Diao_Yong_Han_Shu == "asd()" or Diao_Yong_Han_Shu == "num2" or Diao_Yong_Han_Shu == "2":
+elif Diao_Yong_Han_Shu == "autoshutdown()" or Diao_Yong_Han_Shu == "asd()" or Diao_Yong_Han_Shu == "2":
     autoshutdown()
     pass
+elif Diao_Yong_Han_Shu == "translation()" or Diao_Yong_Han_Shu == "tr()" or Diao_Yong_Han_Shu == "3":
+    translation()
 elif "/" in Diao_Yong_Han_Shu:
     print("这里不是我的世界啊(っ °Д °;)っ")
     input()
     pass
-elif "()"  not in Diao_Yong_Han_Shu:
+elif "()" not in Diao_Yong_Han_Shu:
     print("你是不是忘记加括号了(⊙_⊙)？")
     input()
 else:
     print("无效的输入")
-    input()
-    pass
+    aaa = input()
+    if aaa == "about this":
+        about_this()
