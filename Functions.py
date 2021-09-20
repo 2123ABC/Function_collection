@@ -94,7 +94,7 @@ def about_this():
 # 欢迎界面
 split_line()
 print("欢迎使用函数集")
-print("版本号：0.000114514")
+print("版本号：0.02")
 print("这个作品只是2123ABC(Unknown2123)临时想出来的东西")
 print("因此请不要在意那些细节(*/ω＼*)")
 split_line()
