@@ -1,4 +1,4 @@
-# Function_collection
+# 关于函数集（Function_collection）
 
 Function_collection是一个集许多函数于一身的小工具（虽然现在不是），它可以进行例如定时关机、备份文件等操作（不是很好）
 这个小工具可能BUG有点多，之后有可能会修
